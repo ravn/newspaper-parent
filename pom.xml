@@ -4,61 +4,62 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-  <parent>
-    <groupId>org.sbforge</groupId>
-    <artifactId>sbforge-parent</artifactId>
-    <version>12</version>
-  </parent>
+    <parent>
+        <groupId>org.sbforge</groupId>
+        <artifactId>sbforge-parent</artifactId>
+        <version>12</version>
+    </parent>
 
-  <groupId>newspaper-parent</groupId>
-  <artifactId>newspaper-parent</artifactId>
-  <version>0.1-SNAPSHOT</version>
+    <groupId>newspaper-parent</groupId>
+    <artifactId>newspaper-parent</artifactId>
+    <version>0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
 
-  <inceptionYear>2013</inceptionYear>
-  <licenses>
-    <license>
-      <name>The Apache Software License, Version 2.0</name>
-      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-      <distribution>repo</distribution>
-    </license>
-  </licenses>
+    <inceptionYear>2013</inceptionYear>
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
 
-  <issueManagement>
-    <system>JIRA</system>
-    <url>https://sbforge.org/jira/browse/NEWSPAPER</url>
-  </issueManagement>
+    <issueManagement>
+        <system>JIRA</system>
+        <url>https://sbforge.org/jira/browse/NEWSPAPER</url>
+    </issueManagement>
 
-  <ciManagement>
-    <system>Jenkins</system>
-    <url>https://sbforge.org/jenkins/</url>
-  </ciManagement>
+    <ciManagement>
+        <system>Jenkins</system>
+        <url>https://sbforge.org/jenkins/</url>
+    </ciManagement>
 
-  <url>https://sbforge.org/display/NEWSPAPER</url>
+    <url>https://sbforge.org/display/NEWSPAPER</url>
 
-  <organization>
-    <name>The State and University Library</name>
-    <url>https://statsbiblioteket.dk</url>
-  </organization>
+    <organization>
+        <name>The State and University Library</name>
+        <url>https://statsbiblioteket.dk</url>
+    </organization>
 
-  <scm>
-    <url>https://github.com/statsbiblioteket/newspaper-parent</url>
-    <connection>scm:https://github.com/statsbiblioteket/newspaper-parent.git</connection>
-    <developerConnection>scm:git@github.com:statsbiblioteket/newspaper-parent.git</developerConnection>
-    <tag>HEAD</tag>
-  </scm>
+    <scm>
+        <url>https://github.com/statsbiblioteket/newspaper-parent</url>
+        <connection>scm:https://github.com/statsbiblioteket/newspaper-parent.git</connection>
+        <developerConnection>scm:git@github.com:statsbiblioteket/newspaper-parent.git</developerConnection>
+        <tag>HEAD</tag>
+    </scm>
 
-  <repositories>
-    <repository>
-      <id>sbforge-nexus</id>
-      <url>https://sbforge.org/nexus/content/groups/public</url>
-      <releases>
-        <enabled>true</enabled>
-      </releases>
-      <snapshots>
-        <enabled>true</enabled>
-      </snapshots>
-    </repository>
-  </repositories>
+    <repositories>
+        <repository>
+            <id>sbforge-nexus</id>
+            <url>https://sbforge.org/nexus/content/groups/public</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
 
     <properties>
         <integration.test.newspaper.properties>${env.HOME}/newspaper-devel-config/integration.test.newspaper.properties</integration.test.newspaper.properties>
