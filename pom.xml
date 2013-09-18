@@ -10,7 +10,7 @@
     <version>12</version>
   </parent>
 
-  <groupId>newspaper-parent</groupId>
+  <groupId>dk.statsbiblioteket.newspaper</groupId>
   <artifactId>newspaper-parent</artifactId>
   <version>0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
@@ -62,6 +62,7 @@
   </repositories>
 
   <properties>
+    <licenseName>apache_v2</licenseName><!-- Used by the license plugin-->
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <integration.test.newspaper.properties>${env.HOME}/newspaper-devel-config/integration.test.newspaper.properties</integration.test.newspaper.properties>
   </properties>
@@ -101,6 +102,18 @@
         <configuration>
           <excludedGroups>integrationTest</excludedGroups>
         </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>license-maven-plugin</artifactId>
+        <executions>
+          <execution>
+            <id>download-licenses</id>
+            <goals>
+              <goal>download-licenses</goal>
+            </goals>
+          </execution>
+        </executions>
       </plugin>
 
       <plugin>
