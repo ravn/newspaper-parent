@@ -64,8 +64,38 @@
   <properties>
     <licenseName>apache_v2</licenseName><!-- Used by the license plugin-->
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <slf4j.version>1.7.5</slf4j.version>
     <integration.test.newspaper.properties>${env.HOME}/newspaper-devel-config/integration.test.newspaper.properties</integration.test.newspaper.properties>
   </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <version>${slf4j.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-classic</artifactId>
+      <version>1.0.13</version>
+    </dependency>
+      <!-- Hook up the other loggers to use SLF4J -->
+      <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>jul-to-slf4j</artifactId>
+        <version>${slf4j.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>log4j-over-slf4j</artifactId>
+        <version>${slf4j.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>jcl-over-slf4j</artifactId>
+        <version>${slf4j.version}</version>
+      </dependency>
+  </dependencies>
 
   <build>
     <plugins>
@@ -103,7 +133,7 @@
           <excludedGroups>integrationTest</excludedGroups>
         </configuration>
       </plugin>
-      <plugin>
+      <!--plugin> Run every time as part of build which takes valuable time.
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>license-maven-plugin</artifactId>
         <executions>
@@ -114,7 +144,7 @@
             </goals>
           </execution>
         </executions>
-      </plugin>
+      </plugin-->
 
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
@@ -129,7 +159,9 @@
         </executions>
         <configuration>
           <encoding>UTF-8</encoding>
-          <systemPropertiesFile>${integration.test.newspaper.properties}</systemPropertiesFile>
+          <systemPropertyVariables>
+            <integration.test.newspaper.properties>${integration.test.newspaper.properties}</integration.test.newspaper.properties>
+          </systemPropertyVariables>
           <groups>integrationTest</groups>
           <includes>
             <include>**/*.java</include>
