@@ -43,8 +43,8 @@
 
     <scm>
         <url>https://github.com/statsbiblioteket/newspaper-parent</url>
-        <connection>scm:https://github.com/statsbiblioteket/newspaper-parent.git</connection>
-        <developerConnection>scm:git@github.com:statsbiblioteket/newspaper-parent.git</developerConnection>
+        <connection>scm:git:https://github.com/statsbiblioteket/newspaper-parent.git</connection>
+        <developerConnection>scm:git:git@github.com:statsbiblioteket/newspaper-parent.git</developerConnection>
         <tag>HEAD</tag>
     </scm>
 
