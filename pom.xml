@@ -66,8 +66,8 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <slf4j.version>1.7.5</slf4j.version>
         <integration.test.newspaper.properties>${env.HOME}/newspaper-devel-config/integration.test.newspaper.properties</integration.test.newspaper.properties>
+        <integration.test.newspaper.testdata>${env.HOME}/newspaper-testdata</integration.test.newspaper.testdata>
     </properties>
-
 
     <dependencyManagement>
         <dependencies>
@@ -209,6 +209,7 @@
                     <encoding>UTF-8</encoding>
                     <systemPropertyVariables>
                         <integration.test.newspaper.properties>${integration.test.newspaper.properties}</integration.test.newspaper.properties>
+                        <integration.test.newspaper.testdata>${integration.test.newspaper.testdata}</integration.test.newspaper.testdata>
                     </systemPropertyVariables>
                     <groups>integrationTest</groups>
                     <includes>
