@@ -10,7 +10,7 @@
 
     <groupId>dk.statsbiblioteket.newspaper</groupId>
     <artifactId>newspaper-parent</artifactId>
-    <version>0.2-SNAPSHOT</version>
+    <version>0.2</version>
     <packaging>pom</packaging>
 
     <inceptionYear>2013</inceptionYear>
@@ -43,7 +43,7 @@
         <url>https://github.com/statsbiblioteket/newspaper-parent</url>
         <connection>scm:git:https://github.com/statsbiblioteket/newspaper-parent.git</connection>
         <developerConnection>scm:git:git@github.com:statsbiblioteket/newspaper-parent.git</developerConnection>
-        <tag>HEAD</tag>
+        <tag>newspaper-parent-0.2</tag>
     </scm>
 
     <repositories>
