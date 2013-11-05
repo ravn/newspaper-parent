@@ -215,6 +215,22 @@
                     </includes>
                 </configuration>
             </plugin>
+
+          <plugin>
+            <artifactId>maven-jar-plugin</artifactId>
+            <inherited>true</inherited>
+            <configuration>
+              <archive>
+                <manifest>
+                  <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
+                  <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
+                </manifest>
+                <manifestEntries>
+                  <key>value</key>
+                </manifestEntries>
+              </archive>
+            </configuration>
+          </plugin>
         </plugins>
 
         <pluginManagement>
