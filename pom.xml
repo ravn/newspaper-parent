@@ -176,45 +176,31 @@
                     </execution>
                 </executions>
                 <configuration>
-                    <excludedGroups>integrationTest</excludedGroups>
+                    <excludedGroups>integrationTest,standAloneTest,externalTest,testDataTest</excludedGroups>
+                    <forkMode>never</forkMode>
                 </configuration>
             </plugin>
-            <!--plugin> Run every time as part of build which takes valuable time.
-              <groupId>org.codehaus.mojo</groupId>
-              <artifactId>license-maven-plugin</artifactId>
-              <executions>
-                <execution>
-                  <id>download-licenses</id>
-                  <goals>
-                    <goal>download-licenses</goal>
-                  </goals>
-                </execution>
-              </executions>
-            </plugin-->
 
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-failsafe-plugin</artifactId>
-                <executions>
-                    <execution>
-                        <goals>
-                            <goal>integration-test</goal>
-                            <goal>verify</goal>
-                        </goals>
-                    </execution>
-                </executions>
-                <configuration>
+                <inherited>true</inherited>
+                <configuration combine.children="append">
                     <encoding>UTF-8</encoding>
                     <systemPropertyVariables>
-                        <integration.test.newspaper.properties>${integration.test.newspaper.properties}</integration.test.newspaper.properties>
-                        <integration.test.newspaper.testdata>${integration.test.newspaper.testdata}</integration.test.newspaper.testdata>
+                        <integration.test.newspaper.properties>${integration.test.newspaper.properties}
+                        </integration.test.newspaper.properties>
+                        <integration.test.newspaper.testdata>${integration.test.newspaper.testdata}
+                        </integration.test.newspaper.testdata>
                     </systemPropertyVariables>
-                    <groups>integrationTest</groups>
                     <includes>
                         <include>**/*.java</include>
                     </includes>
+                    <forkCount>0</forkCount>
                 </configuration>
             </plugin>
+
+
 
           <plugin>
             <artifactId>maven-jar-plugin</artifactId>
@@ -262,11 +248,11 @@
                 </plugin>
                 <plugin>
                     <artifactId>maven-surefire-plugin</artifactId>
-                    <version>2.14.1</version>
+                    <version>2.16</version>
                 </plugin>
                 <plugin>
                     <artifactId>maven-failsafe-plugin</artifactId>
-                    <version>2.14.1</version>
+                    <version>2.16</version>
                 </plugin>
                 <plugin>
                     <artifactId>maven-war-plugin</artifactId>
@@ -314,4 +300,110 @@
         </pluginManagement>
     </build>
 
+    <profiles>
+        <profile>
+
+            <id>standAloneTests</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-failsafe-plugin</artifactId>
+                        <inherited>true</inherited>
+                        <executions>
+                            <execution>
+                                <id>standAloneTests</id>
+                                <goals>
+                                    <goal>integration-test</goal>
+                                    <goal>verify</goal>
+                                </goals>
+                                <configuration>
+                                    <groups>standAloneTest</groups>
+                                    <includes>
+                                        <include>**/*.java</include>
+                                    </includes>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
+            <id>externalTests</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-failsafe-plugin</artifactId>
+                        <inherited>true</inherited>
+                        <executions>
+                            <execution>
+                                <id>externalTests</id>
+                                <goals>
+                                    <goal>integration-test</goal>
+                                    <goal>verify</goal>
+                                </goals>
+                                <configuration>
+                                    <groups>externalTest</groups>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
+            <id>testDataTests</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-failsafe-plugin</artifactId>
+                        <inherited>true</inherited>
+                        <executions>
+                            <execution>
+                                <id>testDataTests</id>
+                                <goals>
+                                    <goal>integration-test</goal>
+                                    <goal>verify</goal>
+                                </goals>
+                                <configuration>
+                                    <groups>testDataTest</groups>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+        <profile>
+            <id>integrationTests</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-failsafe-plugin</artifactId>
+                        <inherited>true</inherited>
+                        <executions>
+                            <execution>
+                                <id>externalTests</id>
+                                <goals>
+                                    <goal>integration-test</goal>
+                                    <goal>verify</goal>
+                                </goals>
+                                <configuration>
+                                    <groups>integrationTest</groups>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+
+    </profiles>
 </project>
