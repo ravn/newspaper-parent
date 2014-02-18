@@ -5,7 +5,7 @@
     <parent>
         <groupId>org.sbforge</groupId>
         <artifactId>sbforge-parent</artifactId>
-        <version>12</version>
+        <version>16</version>
     </parent>
 
     <groupId>dk.statsbiblioteket.newspaper</groupId>
@@ -62,7 +62,7 @@
     <properties>
         <licenseName>apache_v2</licenseName><!-- Used by the license plugin-->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <slf4j.version>1.7.5</slf4j.version>
+        <slf4j.version>1.7.6</slf4j.version>
         <integration.test.newspaper.properties>${env.HOME}/newspaper-devel-config/integration.test.newspaper.properties</integration.test.newspaper.properties>
         <integration.test.newspaper.testdata>${env.HOME}/newspaper-testdata</integration.test.newspaper.testdata>
     </properties>
@@ -84,7 +84,7 @@
             <dependency>
                 <groupId>ch.qos.logback</groupId>
                 <artifactId>logback-classic</artifactId>
-                <version>1.0.13</version>
+                <version>1.1.1</version>
             </dependency>
             <!-- Hook up the other loggers to use SLF4J. These are only test dependencies as it should be up to the actual
             runtime container to decide on the concrete logging backend. -->
@@ -250,11 +250,11 @@
                 </plugin>
                 <plugin>
                     <artifactId>maven-javadoc-plugin</artifactId>
-                    <version>2.9</version>
+                    <version>2.9.1</version>
                 </plugin>
                 <plugin>
                     <artifactId>maven-release-plugin</artifactId>
-                    <version>2.4.1</version>
+                    <version>2.4.2</version>
                 </plugin>
                 <plugin>
                     <artifactId>maven-jar-plugin</artifactId>
@@ -262,15 +262,15 @@
                 </plugin>
                 <plugin>
                     <artifactId>maven-surefire-plugin</artifactId>
-                    <version>2.14.1</version>
+                    <version>2.16</version>
                 </plugin>
                 <plugin>
                     <artifactId>maven-failsafe-plugin</artifactId>
-                    <version>2.14.1</version>
+                    <version>2.16</version>
                 </plugin>
                 <plugin>
                     <artifactId>maven-war-plugin</artifactId>
-                    <version>2.3</version>
+                    <version>2.4</version>
                 </plugin>
                 <plugin>
                     <artifactId>maven-assembly-plugin</artifactId>
@@ -282,7 +282,7 @@
                 </plugin>
                 <plugin>
                     <artifactId>maven-remote-resources-plugin</artifactId>
-                    <version>1.4</version>
+                    <version>1.5</version>
                 </plugin>
                 <plugin>
                     <artifactId>maven-clean-plugin</artifactId>
@@ -290,11 +290,11 @@
                 </plugin>
                 <plugin>
                     <artifactId>maven-install-plugin</artifactId>
-                    <version>2.4</version>
+                    <version>2.5.1</version>
                 </plugin>
                 <plugin>
                     <artifactId>maven-deploy-plugin</artifactId>
-                    <version>2.7</version>
+                    <version>2.8.1</version>
                 </plugin>
                 <plugin>
                     <artifactId>maven-dependency-plugin</artifactId>
@@ -308,10 +308,12 @@
                 <plugin>
                     <groupId>org.apache.tomcat.maven</groupId>
                     <artifactId>tomcat7-maven-plugin</artifactId>
-                    <version>2.1</version>
+                    <version>2.2</version>
                 </plugin>
             </plugins>
         </pluginManagement>
     </build>
-
+  <prerequisites>
+    <maven>2.2.1</maven>
+  </prerequisites>
 </project>
