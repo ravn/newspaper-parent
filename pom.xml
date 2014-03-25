@@ -217,6 +217,44 @@
 
         <pluginManagement>
             <plugins>
+                <!--
+                WARNING] 'reporting.plugins.plugin.version' for org.apache.maven.plugins:maven-changes-plugin is missing. @ org.sbforge:sbforge-parent:16, /home/abr/.m2/repository/org/sbforge/sbforge-parent/16/sbforge-parent-16.pom, line 120, column 15
+                [WARNING] 'reporting.plugins.plugin.version' for org.apache.maven.plugins:maven-surefire-report-plugin is missing. @ org.sbforge:sbforge-parent:16, /home/abr/.m2/repository/org/sbforge/sbforge-parent/16/sbforge-parent-16.pom, line 130, column 15
+                [WARNING] 'reporting.plugins.plugin.version' for org.codehaus.mojo:jdepend-maven-plugin is missing. @ org.sbforge:sbforge-parent:16, /home/abr/.m2/repository/org/sbforge/sbforge-parent/16/sbforge-parent-16.pom, line 133, column 15
+                [WARNING] 'reporting.plugins.plugin.version' for org.codehaus.mojo:cobertura-maven-plugin is missing. @ org.sbforge:sbforge-parent:16, /home/abr/.m2/repository/org/sbforge/sbforge-parent/16/sbforge-parent-16.pom, line 137, column 15
+                [WARNING] 'reporting.plugins.plugin.version' for org.codehaus.mojo:taglist-maven-plugin is missing. @ org.sbforge:sbforge-parent:16, /home/abr/.m2/repository/org/sbforge/sbforge-parent/16/sbforge-parent-16.pom, line 141, column 15
+                [WARNING] 'reporting.plugins.plugin.version' for org.apache.maven.plugins:maven-jxr-plugin is missing. @ org.sbforge:sbforge-parent:16, /home/abr/.m2/repository/org/sbforge/sbforge-parent/16/sbforge-parent-16.pom, line 145, column 15
+                -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-changes-plugin</artifactId>
+                    <version>2.9.1</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-report-plugin</artifactId>
+                    <version>2.14.1</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>jdepend-maven-plugin</artifactId>
+                    <version>2.0</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>cobertura-maven-plugin</artifactId>
+                    <version>2.5.2</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.codehaus.mojo</groupId>
+                    <artifactId>taglist-maven-plugin</artifactId>
+                    <version>2.4</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-jxr-plugin</artifactId>
+                    <version>2.3</version>
+                </plugin>
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
                     <artifactId>license-maven-plugin</artifactId>
