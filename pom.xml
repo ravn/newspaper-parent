@@ -177,14 +177,14 @@
                 </executions>
                 <configuration>
                   <excludedGroups>integrationTest,standAloneTest,externalTest,testDataTest</excludedGroups>
-                  <forkMode>never</forkMode>
+                    <forkCount>0</forkCount>
                 </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-failsafe-plugin</artifactId>
                 <inherited>true</inherited>
-                <configuration combine.children="append">
+                <configuration>
                     <encoding>UTF-8</encoding>
                     <systemPropertyVariables>
                         <integration.test.newspaper.properties>${integration.test.newspaper.properties}</integration.test.newspaper.properties>
@@ -346,6 +346,9 @@
                 </goals>
                 <configuration>
                   <groups>externalTest</groups>
+                    <includes>
+                      <include>**/*.java</include>
+                    </includes>
                 </configuration>
               </execution>
             </executions>
@@ -370,6 +373,10 @@
                 </goals>
                 <configuration>
                   <groups>testDataTest</groups>
+                    <includes>
+                      <include>**/*.java</include>
+                    </includes>
+                    <forkCount>0</forkCount>
                 </configuration>
               </execution>
             </executions>
@@ -394,6 +401,10 @@
                 </goals>
                 <configuration>
                   <groups>integrationTest</groups>
+                    <includes>
+                      <include>**/*.java</include>
+                    </includes>
+                    <forkCount>0</forkCount>
                 </configuration>
               </execution>
             </executions>
