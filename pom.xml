@@ -434,7 +434,7 @@
             <inherited>true</inherited>
             <executions>
               <execution>
-                <id>externalTests</id>
+                <id>integrationTests</id>
                 <goals>
                   <goal>integration-test</goal>
                   <goal>verify</goal>
