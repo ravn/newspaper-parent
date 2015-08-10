@@ -65,6 +65,8 @@
         <slf4j.version>1.7.6</slf4j.version>
         <integration.test.newspaper.properties>${env.HOME}/newspaper-devel-config/integration.test.newspaper.properties</integration.test.newspaper.properties>
         <integration.test.newspaper.testdata>${env.HOME}/newspaper-testdata</integration.test.newspaper.testdata>
+        <surefire.forkCount>1C</surefire.forkCount>
+        <failsafe.forkCount>1C</failsafe.forkCount>
     </properties>
 
     <dependencyManagement>
@@ -177,7 +179,7 @@
                 </executions>
                 <configuration>
                   <excludedGroups>integrationTest,standAloneTest,externalTest,testDataTest</excludedGroups>
-                    <forkCount>0</forkCount>
+                    <forkCount>${surefire.forkCount}</forkCount>
                 </configuration>
             </plugin>
             <plugin>
@@ -194,7 +196,7 @@
                     <includes>
                         <include>**/*.java</include>
                     </includes>
-                    <forkCount>0</forkCount>
+                    <forkCount>${failsafe.forkCount}</forkCount>
                 </configuration>
             </plugin>
 
@@ -360,7 +362,7 @@
                   <includes>
                     <include>**/*.java</include>
                   </includes>
-                    <forkCount>0</forkCount>
+                    <forkCount>${failsafe.forkCount}</forkCount>
                 </configuration>
               </execution>
             </executions>
@@ -388,7 +390,7 @@
                     <includes>
                       <include>**/*.java</include>
                     </includes>
-                    <forkCount>0</forkCount>
+                    <forkCount>${failsafe.forkCount}</forkCount>
                 </configuration>
               </execution>
             </executions>
@@ -416,7 +418,7 @@
                     <includes>
                       <include>**/*.java</include>
                     </includes>
-                    <forkCount>0</forkCount>
+                    <forkCount>${failsafe.forkCount}</forkCount>
                 </configuration>
               </execution>
             </executions>
@@ -444,7 +446,7 @@
                     <includes>
                       <include>**/*.java</include>
                     </includes>
-                    <forkCount>0</forkCount>
+                    <forkCount>${failsafe.forkCount}</forkCount>
                 </configuration>
               </execution>
             </executions>
