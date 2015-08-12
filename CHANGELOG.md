@@ -1,3 +1,6 @@
+1.4
+Do not duplicate the sbforge-parent source plugin
+
 1.3
 Allow forkCount for surefire.forkCount failsafe.forkCount to be overridden
 
