@@ -1,3 +1,6 @@
+1.3
+Allow forkCount for surefire.forkCount failsafe.forkCount to be overridden
+
 1.1
 Bumping versions.
 Updating to sbforge-parent-16 which fixes issue with releasing on git 1.8.
