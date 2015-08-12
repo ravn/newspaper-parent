@@ -1,3 +1,6 @@
+1.5
+Fix source plugin as seen in http://blog.peterlynch.ca/2010/05/maven-how-to-prevent-generate-sources.html
+
 1.4
 Do not duplicate the sbforge-parent source plugin
 
